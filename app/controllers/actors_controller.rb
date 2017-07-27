@@ -1,10 +1,12 @@
 class ActorsController < ApplicationController
   def index
     @actors = Actor.all
+    render("actors/index.html.erb")
   end
 
   def show
     @actor = Actor.find(params[:id])
+    render("actors/index.html.erb")
   end
 
   def new_form
@@ -43,5 +45,6 @@ class ActorsController < ApplicationController
     @actor = Actor.find(params[:id])
 
     @actor.destroy
+     render("actors/index.html.erb")
   end
 end

@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    render("movies/index.html.erb")
   end
 
   def new_form
@@ -50,5 +51,6 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
 
     @movie.destroy
+    render("movies/index.html.erb")
   end
 end
